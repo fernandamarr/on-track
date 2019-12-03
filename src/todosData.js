@@ -2,7 +2,7 @@ const todosData = [
   {
     id: 1,
     text: "Take out the trash",
-    completed: true
+    completed: false
   },
   {
     id: 2,
