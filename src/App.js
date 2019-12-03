@@ -1,10 +1,10 @@
-import React from "react"
+import React, {Component} from 'react'
 import Header from './components/Header'
-import TodoItem from "./components/TodoItem"
-import todosData from "./todosData"
+import TodoItem from './components/TodoItem'
+import todosData from './todosData'
 import './style.css'
 
-class App extends React.Component {
+class App extends Component {
 	constructor() {
 		super()
 		this.state = {
@@ -35,9 +35,9 @@ class App extends React.Component {
 		const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>)
 		
 		return (
-			<div className="header">
+			<div className='header'>
 				<Header />
-				<div className="todo-list">
+				<div className='todo-list'>
 					{todoItems}
 				</div>
 			</div>
