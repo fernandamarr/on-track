@@ -8,15 +8,24 @@ class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-			todos: todosData
+			todos: todosData,
+			isLoading: true
 		}
 		this.handleChange = this.handleChange.bind(this)
+	}
+
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({
+				isLoading: false
+			})
+		}, 1500);
 	}
 	
 	handleChange(id) {
 		this.setState(prevState => {
 			const updatedTodos = prevState.todos.map(todo => {
-				if (todo.id === id) {
+				if (todo.id === id) { 
 					// return new object to not modify old object directly.
 					return {
 						...todo,
@@ -35,12 +44,15 @@ class App extends Component {
 		const todoItems = this.state.todos.map(item => <TodoItem key={item.id} item={item} handleChange={this.handleChange}/>)
 		
 		return (
-			<div className='header'>
-				<Header />
-				<div className='todo-list'>
-					{todoItems}
-				</div>
-			</div>
+      <div>
+        <div className='header'>
+        <Header />
+          
+        </div>
+          <div className='todo-list'>
+            {this.state.isLoading ? <h1>Loading...</h1> : todoItems } 
+          </div>
+      </div>
 		)    
 	}
 }
