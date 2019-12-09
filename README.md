@@ -1,3 +1,4 @@
-# on-track -- This app is in progress
+# on-track
 
+Simple to-do app using React
 [Heroku](https://on-track-planner.herokuapp.com/)

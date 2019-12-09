@@ -50,7 +50,7 @@ class App extends Component {
           
         </div>
           <div className='todo-list'>
-            {this.state.isLoading ? <h1>Loading...</h1> : todoItems } 
+            {this.state.isLoading ? <h2>Loading...</h2> : todoItems } 
           </div>
       </div>
 		)    
